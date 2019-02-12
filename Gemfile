@@ -68,3 +68,7 @@ gem 'simple_form'
 
 # keys to API
 gem 'dotenv-rails', groups: [:development, :test]
+
+# Cloudinary gem / carrierwave
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
