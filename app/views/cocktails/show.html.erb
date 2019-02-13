@@ -1,6 +1,7 @@
 
 
 <h2><%= @cocktail.name %></h2>
+<%= image_tag @cocktail.photo.url(:bright_face) %>
 <% @cocktail.doses.each do |dose| %>
   <ul>
     <li><p><%= dose.description %> of <%=dose.ingredient.name %>

@@ -1,12 +1,32 @@
-<div class="container">
-  <div class="row">
-  <% @cocktails.each do |cocktail| %>
-    <div class="card-category" class="col-sm-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      <%= link_to cocktail.name, cocktail_path(cocktail) %>
-    </div>
+<div class="banner" style="background: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://res.cloudinary.com/dtlqklwkx/image/upload/v1549961387/kaufmann-mercantile-290712-unsplash.jpg');">
+  <div class="banner-content">
+    <h1>WELCOME TO HAPPY DRINKS</h1>
+    <p>Prepare unique drinks that will make you happy!.</p>
+    <%= link_to 'Create new cocktail', new_cocktail_path, class: "btn-treehouse btn-lg" %>
   </div>
-  <% end %>
 </div>
-<h3><%= link_to 'Create new cocktail', new_cocktail_path %></h3>
 
+<div class="container">
+  <h2 class="text-center">
+    What is your next cocktail?
+  </h2>
+
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <div class="card">
+        <div class="card-body" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url(<%= image_tag cocktail.photo.url %>);">
+          <span class="card-category"><%= link_to cocktail.name, cocktail_path(cocktail) %></span>
+          <div class="card-footer">
+            <p>Posted on 22/11/19</p>
+            <div class="controls">
+              <a href="#"><i class="fa fa-star"></i></a></li>
+              <a href="#"><i class="fa fa-heart"></i></a></li>
+              <a href="#"><i class="fa fa-share"></i></a></li>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
